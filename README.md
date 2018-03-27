@@ -8,5 +8,4 @@ This is the python code for group 15's WAYFINDR project in module ASE. It's main
 
 1. Development Environment
 
-python 3.6.4
-required packages: threading, requests, pymongo, time
+(python 3.6.4) required packages: threading, requests, pymongo, time
