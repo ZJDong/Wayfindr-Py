@@ -69,6 +69,7 @@ def updating_listener(uri_1, uri_2):
             cursor = db2.Noise_Data.watch(full_document='updateLookup')
             document = next(cursor)
             print(document)
+            print('\nOperation: ', document['operationType'])
             try:
                 a = document['updateDescription']
                 aa = a['updatedFields']
@@ -86,6 +87,7 @@ def updating_listener(uri_1, uri_2):
             cursor = db1.Noise_Data.watch(full_document='updateLookup')
             document = next(cursor)
             print(document)
+            print('\nOperation: ', document['operationType'])
             try:
                 a = document['updateDescription']
                 aa = a['updatedFields']
