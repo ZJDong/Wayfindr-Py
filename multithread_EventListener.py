@@ -69,17 +69,35 @@ def updating_listener(uri_1, uri_2):
             cursor = db2.Noise_Data.watch(full_document='updateLookup')
             document = next(cursor)
             print(document)
-            print("\nData has been updated, flag has been reset as 1.\n")
-            db1.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'}, {'$set': {'value': 1}},
-                                  upsert=True)
+            try:
+                a = document['updateDescription']
+                aa = a['updatedFields']
+                if 'Noise_Index' in aa:
+                    db1.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
+                                           {'$set': {'value': 1}},
+                                           upsert=True)
+                    print("\nFlag changed!!!\n")
+                else:
+                    print("No changing on Noise Index.\n")
+            except:
+                print("Changes are ignored.")
         else:
             print("Machine 2 is the primary, listening to the updating.\n")
             cursor = db1.Noise_Data.watch(full_document='updateLookup')
             document = next(cursor)
             print(document)
-            print("\nData has been updated, flag has been reset as 1.\n")
-            db2.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'}, {'$set': {'value': 1}},
-                                  upsert=True)
+            try:
+                a = document['updateDescription']
+                aa = a['updatedFields']
+                if 'Noise_Index' in aa:
+                    db1.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
+                                           {'$set': {'value': 1}},
+                                           upsert=True)
+                    print("\nFlag changed!!!\n")
+                else:
+                    print("No changing on Noise Index.\n")
+            except:
+                print("Changes are ignored.")
 
 
 def is_master(uri):
