@@ -4,7 +4,7 @@ ZJDong
 
 0. Introduction
 
-This is the python code for group 15's WAYFINDR project in module ASE. It's mainly used to regularly request the noise data from internet APIs and save the data to mongoDB. Meanwhile, it monitor the changes in mongoDB. Once it gets the changes, it will unset the changing flag for GO APP of the project.
+This is python code for group 15's WAYFINDR project in module ASE. It's mainly used to regularly request the noise data from internet APIs and save the data to mongoDB. Meanwhile, it can monitor the changes in mongoDB. Once it gets the concerned data changes, it will unset the changing flag to let the GO APP know and then recalculate the route for users.
 
 1. Development Environment
 
