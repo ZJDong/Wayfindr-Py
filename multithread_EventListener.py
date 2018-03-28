@@ -92,7 +92,7 @@ def updating_listener(uri_1, uri_2):
                 a = document['updateDescription']
                 aa = a['updatedFields']
                 if 'Noise_Index' in aa:
-                    db1.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
+                    db2.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
                                            {'$set': {'value': 1}},
                                            upsert=True)
                     print("\nFlag changed!!!\n")
