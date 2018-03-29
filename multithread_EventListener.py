@@ -77,7 +77,7 @@ def updating_listener(uri_1, uri_2):
                     db1.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
                                            {'$set': {'value': 1}},
                                            upsert=True)
-                    print("\nFlag changed!!!\n")
+                    print("\nFlag changed!\n")
                 else:
                     print("No changing on Noise Index.\n")
             except:
@@ -95,7 +95,7 @@ def updating_listener(uri_1, uri_2):
                     db2.Trigger.update_one({'flag of noise data': '1: changed; 0: not changed.'},
                                            {'$set': {'value': 1}},
                                            upsert=True)
-                    print("\nFlag changed!!!\n")
+                    print("\nFlag changed!\n")
                 else:
                     print("No changing on Noise Index.\n")
             except:
