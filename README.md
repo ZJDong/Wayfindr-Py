@@ -4,7 +4,7 @@ Zhijian Dong (17313074)
 
 0. Introduction
 
-This is python code for group 15's project 'Wayfindr' in module ASE. It's mainly used to regularly request the noise data from internet APIs and save them to mongoDB. Meanwhile, it can monitor the changes in mongoDB. Once it gets the data changes, it will unset the changing flag to let the GO APP know and then recalculate the route for users. More, it has the error error handling ability. Even if any unexceped error happened like one of the machines on which runs the database is dead, it will automaticly change its connecting to the replication machine without terminating.
+This is python code for group 15's project 'Wayfindr' in module ASE. It's mainly used to regularly request the noise data from internet APIs and save them to mongoDB. Meanwhile, it can monitor the changes in mongoDB. Once it gets the data changes, it will unset the changing flag to let the GO APP know and then recalculate the route for users. More, it has the error handling ability. Even if any unexceped error happened like one of the machines on which runs the database is dead, it will automaticly change its connecting to the replication machine without terminating.
 
 1. Setting up
 
